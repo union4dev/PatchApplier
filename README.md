@@ -2,7 +2,7 @@
 A tool for create / apply patch, also useful in mcp-pro
 
 # Usage
-* download released version
+* download [release](https://github.com/union4dev/PatchApplier/releases)
 * `java -jar PatchApplier.jar [options]`
 
 # Options
