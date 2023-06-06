@@ -15,15 +15,15 @@ public class Main {
             return;
         }
 
-        if (args[0].equals("apply")) {
+        if (args[0].equals("-apply")) {
             try {
                 new ApplyPatches(new File(args[1]), new File(args[2])).run();
             } catch (PatchException | IOException e) {
                 e.printStackTrace();
             }
-        } else if (args[0].equals("make")) {
+        } else if (args[0].equals("-make")) {
             try {
-                new MakePatches(new File(args[1]), new File(args[2]), new File(args[3]), Boolean.parseBoolean(args[4])).run();
+                new MakePatches(new File(args[1]), new File(args[2]), new File(args[3]), !args[4].startsWith("-dry=") || Boolean.parseBoolean(args[4].replace("-dry=", ""))).run();
             } catch (IOException e) {
                 e.printStackTrace();
             }
